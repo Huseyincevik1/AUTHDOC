@@ -5,7 +5,7 @@ import Header from '../src/components/layout/Header/Header.jsx';
 function App() {
   return (
     <>
-      <div className='App'>
+      <div className='App sm:overflow-x-hidden'>
         <Navbar />
         <Header />
       </div>

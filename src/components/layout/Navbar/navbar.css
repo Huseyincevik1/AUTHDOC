@@ -1,15 +1,7 @@
-.navbar {
-  position: sticky;
-  top: 0;
-  padding: 0.5rem;
-  backdrop-filter: blur(20px);
-  box-shadow: 0px 0px 20px;
-  margin-bottom: 2rem;
-}
-
 .navbar-container {
   display: flex;
   align-items: center;
+  gap: 2rem;
   justify-content: space-between;
   padding: 1rem;
 }
@@ -25,11 +17,6 @@
   color: #6e47fd;
 }
 
-@media screen and (max-width: 768px) {
-  .logo-name {
-    display: none;
-  }
-}
 
 .navbar-left {
   display: flex;
@@ -46,7 +33,6 @@
 
 .navbar-link {
   cursor: pointer;
-  transition: color 100ms ease-in-out;
 }
 
 .navbar-link:hover {
