@@ -1,0 +1,54 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 0px 20px;
+  margin-bottom: 2rem;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.logo-img {
+  max-width: 45px;
+  max-height: 45px;
+}
+
+.logo-name {
+  font-size: 36px;
+  font-weight: 700;
+  color: #6e47fd;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-name {
+    display: none;
+  }
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-link {
+  cursor: pointer;
+  transition: color 100ms ease-in-out;
+}
+
+.navbar-link:hover {
+  color: #8569d4;
+}
