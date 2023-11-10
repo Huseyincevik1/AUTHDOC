@@ -12,11 +12,10 @@
 .header-container-left {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 2.3rem;
 }
 
 .hero-text {
-  font-size: 3.2rem;
   line-height: 1;
   font-weight: 700;
 }
@@ -34,7 +33,7 @@
 }
 
 .description {
-  font-size: 1.4rem;
+  font-size: clamp(12px, 2vw, 16px);
   line-height: 1.1;
 }
 

@@ -14,19 +14,19 @@ export default function Header() {
       <div className='header-container'>
         <div className='header-container-left'>
           <div>
-            <div className='hero-text'>
+            <div className='hero-text text-4xl md:text-5xl '>
               <span className='authenticate '>AUTHENTICATE</span> YOUR
               EMPLOYEE'S SCHOOL DOCUMENTS
             </div>
           </div>
 
-          <p className='description'>
+          <p className='description text-sm md:text-lg'>
             Our platform that ensures the secure and transparent verification of
             educational certificates. Start an experience that enhances
             collaboration between students, schools, and employers.
           </p>
 
-          <Button className='connect-wallet p-7'>Connect Your Wallet</Button>
+          <Button className='connect-wallet p-7 '>Connect Your Wallet</Button>
         </div>
         <div className='header-container-right hidden md:flex'>
           <img
@@ -43,8 +43,8 @@ export default function Header() {
           collapsible
           className='w-full '
         >
-          <AccordionItem value='item-1' >
-            <AccordionTrigger  className='text-md'>
+          <AccordionItem value='item-1'>
+            <AccordionTrigger className='text-md'>
               How are my documents secured on the blockchain?
             </AccordionTrigger>
             <AccordionContent>
@@ -56,9 +56,9 @@ export default function Header() {
           </AccordionItem>
 
           <AccordionItem value='item-2'>
-            <AccordionTrigger  className='text-md'>
-              As an institution, what type of documents can I store on this platform
-              ?
+            <AccordionTrigger className='text-md'>
+              As an institution, what type of documents can I store on this
+              platform ?
             </AccordionTrigger>
             <AccordionContent>
               Educational institution can store graduation certificates,
@@ -70,7 +70,7 @@ export default function Header() {
           </AccordionItem>
 
           <AccordionItem value='item-3'>
-            <AccordionTrigger  className='text-md'>
+            <AccordionTrigger className='text-md'>
               How does the document verification process work ?
             </AccordionTrigger>
             <AccordionContent>
