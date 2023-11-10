@@ -36,15 +36,15 @@ export default function Header() {
           />
         </div>
       </div>
-      <div className='faq'>
+      <section className='faq mt-8'>
         <span className='text-3xl font-semibold'>FAQ</span>
         <Accordion
           type='single'
           collapsible
-          className='w-full'
+          className='w-full '
         >
-          <AccordionItem value='item-1'>
-            <AccordionTrigger>
+          <AccordionItem value='item-1' >
+            <AccordionTrigger  className='text-md'>
               How are my documents secured on the blockchain?
             </AccordionTrigger>
             <AccordionContent>
@@ -56,7 +56,7 @@ export default function Header() {
           </AccordionItem>
 
           <AccordionItem value='item-2'>
-            <AccordionTrigger>
+            <AccordionTrigger  className='text-md'>
               As an institution, what type of documents can I store on this platform
               ?
             </AccordionTrigger>
@@ -70,7 +70,7 @@ export default function Header() {
           </AccordionItem>
 
           <AccordionItem value='item-3'>
-            <AccordionTrigger>
+            <AccordionTrigger  className='text-md'>
               How does the document verification process work ?
             </AccordionTrigger>
             <AccordionContent>
@@ -82,7 +82,7 @@ export default function Header() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-      </div>
+      </section>
     </header>
   );
 }

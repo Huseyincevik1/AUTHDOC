@@ -42,7 +42,7 @@ export default function Navbar() {
           </li>
 
           <li className='flex sm:hidden'>
-            <div className=' flex '>
+            <div className='flex '>
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <AlignJustify />

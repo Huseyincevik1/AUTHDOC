@@ -52,12 +52,8 @@
   min-width: 450px;
 }
 
-.faq{
-  margin-top: 5rem;
-}
-
-@media screen and (max-widt:820px) {
-  .header{
+@media screen and (max-widt: 820px) {
+  .header {
     padding: 0.5rem;
   }
 }
