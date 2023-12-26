@@ -1,58 +1,59 @@
 .header {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .header-container {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .header-container-left {
-  display: flex;
-  flex-direction: column;
-  gap: 2.3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.3rem;
 }
 
 .hero-text {
-  line-height: 1;
-  font-weight: 700;
+	line-height: 1;
+	font-weight: 700;
 }
 
 .authenticate {
-  background-color: #ec4899;
-  background-image: linear-gradient(45deg, #ec4899, #8b5cf6);
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+	background-color: #ec4899;
+	background-image: linear-gradient(45deg, #ec4899, #8b5cf6);
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	background-size: 100%;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
 }
 
 .description {
-  font-size: clamp(12px, 2vw, 16px);
-  line-height: 1.1;
+	font-size: clamp(12px, 2vw, 16px);
+	line-height: 1.1;
 }
 
 .connect-wallet {
-  align-self: start;
+	transition: color 0.2s ease-in-out;
+	align-self: start;
 }
 
 .connect-wallet:hover {
-  background-color: #ec4899;
-  background-image: linear-gradient(45deg, #ec4899, #8b5cf6);
-  background-size: 100%;
+	background-color: #ec4899;
+	background-image: linear-gradient(45deg, #ec4899, #8b5cf6);
+	background-size: 100%;
 }
 
 .right-container-img {
-  min-width: 450px;
+	min-width: 450px;
 }
 
 @media screen and (max-widt: 820px) {
-  .header {
-    padding: 0.5rem;
-  }
+	.header {
+		padding: 0.5rem;
+	}
 }
