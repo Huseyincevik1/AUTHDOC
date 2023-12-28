@@ -2,20 +2,21 @@ import { useState } from 'react';
 import { useDocumentContract } from './hooks/useDocumentContract';
 import { ethers } from 'ethers';
 import './App.css';
+
+import Home from '../src/pages/Home/Home.jsx';
 import Navbar from '../src/components/layout/Navbar/Navbar.jsx';
-import Header from '../src/components/layout/Header/Header.jsx';
-import HowItWorks from '../src/components/layout/HowItWorks/HowItWorks.jsx';
-import FAQ from '../src/components/layout/FAQ/FAQ.jsx';
-import Student from '../src/pages/Student/Student.jsx';
 import School from '../src/pages/School/School.jsx';
 import Employer from '../src/pages/Employer/Employer.jsx';
+import MainRoutes from '../src/navigators/MainRoutes.jsx';
+import { ThemeProvider } from './components/theme-provider.js';
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
 	const { contract, signer } = useDocumentContract();
 	const [studentName, setStudentName] = useState('');
 	const [ipfsData, setIpfsData] = useState('');
-
-	const isim = 'Ender';
+	const [studentAddress, setStudentAddress] = useState('');
+	const [verificationCode, setVerificationCode] = useState('');
 
 	const handleNameChange = (event) => {
 		setStudentName(event.target.value);
@@ -160,61 +161,23 @@ const App = () => {
 		}
 	};
 
-	console.log(contract);
+	const isim = 'Ender';
 
 	return (
 		<div className='App sm:overflow-x-hidden '>
 			<Navbar />
-			{/* <Header />
-			<HowItWorks />
-			<FAQ /> */}
+			<Outlet />
 
-			{isim === 'Ender' && (
+			{/* {isim === 'Ender' && ( // isim değişkeni true ise bu kısım çalışır
 				<School
-					addStudent={addStudent}
-					addDocument={addDocument}
+				addStudent={addStudent}
+				addDocument={addDocument}
 				/>
-			)}
+			)} */}
 
-			<Employer verifyDocument={verifyDocument} />
-			<Student viewDocument={viewDocument} />
+			{/* <Employer verifyDocument={verifyDocument} />
 
-			{/* <div>
-					<label>Student Name:</label>
-					<input
-						type='text'
-						value={studentName}
-						onChange={handleNameChange}
-					/>
-				</div>
-				<div>
-					<label>Student Address:</label>
-					<input
-						type='text'
-						value={studentAddress}
-						onChange={handleAddressChange}
-					/>
-				</div>
-				<div>
-					<label>IPFS Data:</label>
-					<input
-						type='text'
-						value={ipfsData}
-						onChange={handleIpfsDataChange}
-					/>
-				</div>
-				<div>
-					<label>Verification Code:</label>
-					<input
-						type='text'
-						value={verificationCode}
-						onChange={handleVerificationCodeChange}
-					/>
-				</div>
-				<button onClick={addStudent}>Add Student</button>
-				<button onClick={addDocument}>Add Document</button>
-				<button onClick={viewDocument}>View Document</button>
-				<button onClick={verifyDocument}>Verify Document</button> */}
+			<Student viewDocument={viewDocument} />  */}
 		</div>
 	);
 };

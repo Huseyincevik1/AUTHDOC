@@ -9,7 +9,7 @@ export default function FAQ() {
 	return (
 		<section
 			id='faq'
-			className='faq mt-8'
+			className='faq mt-8 mb-10'
 		>
 			<span className='text-3xl font-semibold'>FAQ</span>
 			<Accordion
