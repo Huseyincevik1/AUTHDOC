@@ -2,13 +2,47 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { ethers } from 'ethers';
+import { useDocumentContract } from '@/hooks/useDocumentContract';
 
 export default function Employer() {
+	const { contract, signer } = useDocumentContract();
 	const [showAddStudent, setShowAddStudent] = useState(false);
-
+    const [studentAddress , setStudentAddress] = useState('');
+	const [verificationCode, setVerificationCode] = useState('');
 	function openAddStudent() {
 		setShowAddStudent(true);
+	
 	}
+    const verifyDocument = async () => {
+		try {
+			if (!contract || !signer || !verificationCode) {
+				console.error(
+					'Document contract, signer, or verificationCode is invalid'
+				);
+				alert('Document contract, signer, or verificationCode is invalid');
+				return;
+			}
+	  // Replace 'verifyDocument' with the actual function name in your contract
+		const result =	await contract
+				.connect(signer)
+				.isDocumentExist(
+					ethers.utils.getAddress(studentAddress),
+					ethers.utils.formatBytes32String(verificationCode)
+				);
+
+			console.log('Document verified successfully!',result);
+			if (result) {
+				alert('Document verified successfully!');
+			} else {
+				alert('Document verification failed!');
+			}
+		} catch (error) {
+			console.error('Error verifying document:', error);
+			alert('Error verifying document');
+		}
+    
+	};
 
 	return (
 		<>
@@ -35,13 +69,19 @@ export default function Employer() {
 							<Input
 								type='text'
 								className='mb-5'
+								onChange={(e) => {
+                                    setStudentAddress(e.target.value);
+                                }}
 							/>
 							<Label>Verification Code</Label>
 							<Input
 								type='text'
 								className='mb-5'
+								onChange={(e) => {
+                                    setVerificationCode(e.target.value);
+                                }}
 							/>
-							<Button className='self-end'>Verify Document</Button>
+							<Button className='self-end' onClick={verifyDocument}>Verify Document</Button>
 						</div>
 					)}
 				</div>
